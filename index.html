@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resposta Divertida</title>
+<style>
+    body{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+    }
+    #container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #sim, #nao {
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        font-size: 18px;
+        margin: 5px;
+    }
+    #sim {
+        background-color: green;
+        color: white;
+    }
+    #nao {
+        background-color: red;
+        color: white;
+    }
+</style>
+</head>
+<body>
+<div id="container">
+     <h1>Tem beijo pra mim amor?</h1>
+     <button id="sim">Sim</button>
+     <button id="nao">Não</button>
+</div>
+<script>
+    const simButton = document.getElementById("sim");
+    const naoButton = document.getElementById("nao");
+    const container = document.getElementById("container");
+
+    simButton.addEventListener("click", () => {
+        const response = document.createElement("p");
+        response.textContent = "Boa resposta amor!";
+        response.style.color = "green";
+        container.appendChild(response);
+    });
+
+    naoButton.addEventListener("click", () => {
+        const randomX = Math.random() * (window,innerWidth - 100);
+        const randomY = Math.random() * (window,innerHeight - 100);
+        naoButton.style.position = "absolute";
+        naoButton.style.left = randomX + "px";
+        naoButton.style.top = randomY + "px";
+    });
+
+</script>
+</body>
+</html>
